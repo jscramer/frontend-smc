@@ -1,0 +1,9 @@
+@font-face {
+    font-family: "The Unknown Regular";
+    font-weight: 400;
+    font-style: normal;
+    font-display: auto;   
+    src: local("The Unknown Regular"), url(../assets/styles/fonts/TheUnknown-Regular.ttf) format("truetype");  
+    font-family:'The Unknown Regular';  
+
+  }

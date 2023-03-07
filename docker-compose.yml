@@ -1,0 +1,24 @@
+version: '3'
+services:
+  smc-frontend:
+    build: 
+      context: ./
+      dockerfile: ./Dockerfile     
+    image: smc-frontend
+    environment:
+    - VITE_AUTHORIZE_URL=https://app.sportdatavalley.nl/oauths/authorize?client_id=u0RyIyHN_iKtEmRQ2e4zrImRXDG716bdsVZwz0kfaHc&response_code=code&redirect_uri=https://cbd2-130-37-39-31.eu.ngrok.io/authorize&scope=read
+    - VITE_POSTMAN_AUTH_URL=https://fabb979c-bea5-42c1-b6dd-a91ec7a8916d.mock.pstmn.io 
+    - VITE_SMC_URL=https://sportdatavalley.app/
+    - VITE_SDV_URL=https://app.sportdatavalley.nl
+    - VITE_BACKEND_URL=${VITE_BACKEND_URL:-https://cbd2-130-37-39-31.eu.ngrok.io}
+    - VITE_CALCULATOR_URL=${VITE_CALCULATOR_URL:-http://localhost:4000}
+    - VITE_MODE=${VITE_MODE:-PRODUCTION}
+    - FRONTEND_PORT=${FRONTEND_PORT:-8080}   
+      
+    tty: true
+    #network_mode: host
+    ports:
+    - 8080:80
+    
+
+
